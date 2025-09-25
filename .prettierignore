@@ -1,0 +1,18 @@
+# Ignore output directory
+out/
+
+# Ignore version control, IDE, and other tool-specific directories
+.git/
+.idea/
+.claude/
+
+# Ignore package management files
+node_modules/
+package.json
+package-lock.json
+
+# Ignore LaTeX-specific files that should not be formatted
+*.bib
+*.sty
+*.cls
+*.bst
