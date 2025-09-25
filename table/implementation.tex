@@ -1,0 +1,120 @@
+\begin{table}[h]
+\caption{Manual Review Guidelines for Factory Decomposition}
+\label{tab:imp}
+\scriptsize
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|
+>{\columncolor[HTML]{FFFFFF}}c |
+>{\columncolor[HTML]{FFFFFF}}c |
+>{\columncolor[HTML]{FFFFFF}}c |
+>{\columncolor[HTML]{FFFFFF}}c |
+>{\columncolor[HTML]{FFFFFF}}c |}
+\hline
+\textbf{Functionalities} &
+  ID &
+  Sub-Functionalities &
+  Real World Implementations &
+  Related Contract Component \\ \hline
+\cellcolor[HTML]{FFFFFF} &
+  \cellcolor[HTML]{FFFFFF} &
+  \cellcolor[HTML]{FFFFFF} &
+  low-level：create opcode &
+  \cellcolor[HTML]{FFFFFF} \\ \cline{4-4}
+\cellcolor[HTML]{FFFFFF} &
+  \cellcolor[HTML]{FFFFFF} &
+  \cellcolor[HTML]{FFFFFF} &
+  low-level：create2 opcode &
+  \cellcolor[HTML]{FFFFFF} \\ \cline{4-4}
+\cellcolor[HTML]{FFFFFF} &
+  \multirow{-3}{*}{\cellcolor[HTML]{FFFFFF}F1} &
+  \multirow{-3}{*}{\cellcolor[HTML]{FFFFFF}Methods of deploying contracts} &
+  high-level：new Contract &
+  \multirow{-3}{*}{\cellcolor[HTML]{FFFFFF}Functions} \\ \cline{2-5} 
+\cellcolor[HTML]{FFFFFF} &
+  \cellcolor[HTML]{FFFFFF} &
+  \cellcolor[HTML]{FFFFFF} &
+  delay time deployment &
+  Modifiers, Functions \\ \cline{4-5} 
+\cellcolor[HTML]{FFFFFF} &
+  \multirow{-2}{*}{\cellcolor[HTML]{FFFFFF}F2} &
+  \multirow{-2}{*}{\cellcolor[HTML]{FFFFFF}Deployment timing} &
+  Immediate deployment &
+  Functions \\ \cline{2-5} 
+\cellcolor[HTML]{FFFFFF} &
+  \cellcolor[HTML]{FFFFFF} &
+  \cellcolor[HTML]{FFFFFF} &
+  template-based factory passes parameter in created contract constructor &
+  \cellcolor[HTML]{FFFFFF} \\ \cline{4-4}
+\cellcolor[HTML]{FFFFFF} &
+  \cellcolor[HTML]{FFFFFF} &
+  \cellcolor[HTML]{FFFFFF} &
+  template-based factory call Initialization function after deployment &
+  \cellcolor[HTML]{FFFFFF} \\ \cline{4-4}
+\cellcolor[HTML]{FFFFFF} &
+  \cellcolor[HTML]{FFFFFF} &
+  \cellcolor[HTML]{FFFFFF} &
+  bytecode-based factory accepts contract bytecode as parameter &
+  \cellcolor[HTML]{FFFFFF} \\ \cline{4-4}
+\multirow{-9}{*}{\cellcolor[HTML]{FFFFFF}\begin{tabular}[c]{@{}c@{}}Contract \\ Deployment\end{tabular}} &
+  \multirow{-4}{*}{\cellcolor[HTML]{FFFFFF}F3} &
+  \multirow{-4}{*}{\cellcolor[HTML]{FFFFFF}Created contract customization} &
+  clone-based factory based on target address contract bytecode &
+  \multirow{-4}{*}{\cellcolor[HTML]{FFFFFF}Functions} \\ \hline
+\cellcolor[HTML]{FFFFFF} &
+  \cellcolor[HTML]{FFFFFF} &
+  \cellcolor[HTML]{FFFFFF} &
+  check extcode &
+  \cellcolor[HTML]{FFFFFF} \\ \cline{4-4}
+\cellcolor[HTML]{FFFFFF} &
+  \cellcolor[HTML]{FFFFFF} &
+  \cellcolor[HTML]{FFFFFF} &
+  check address equal 0 &
+  \cellcolor[HTML]{FFFFFF} \\ \cline{4-4}
+\cellcolor[HTML]{FFFFFF} &
+  \multirow{-3}{*}{\cellcolor[HTML]{FFFFFF}F4} &
+  \multirow{-3}{*}{\cellcolor[HTML]{FFFFFF}\begin{tabular}[c]{@{}c@{}}Check the validity of the \\ created contract address\end{tabular}} &
+  check address equal to target address &
+  \multirow{-3}{*}{\cellcolor[HTML]{FFFFFF}Events, Functions} \\ \cline{2-5} 
+\cellcolor[HTML]{FFFFFF} &
+  \cellcolor[HTML]{FFFFFF} &
+  \cellcolor[HTML]{FFFFFF} &
+  owner signature verify &
+  \cellcolor[HTML]{FFFFFF} \\ \cline{4-4}
+\multirow{-5}{*}{\cellcolor[HTML]{FFFFFF}\begin{tabular}[c]{@{}c@{}}Validity \\ Check\end{tabular}} &
+  \multirow{-2}{*}{\cellcolor[HTML]{FFFFFF}F5} &
+  \multirow{-2}{*}{\cellcolor[HTML]{FFFFFF}\begin{tabular}[c]{@{}c@{}}Check the validity of the \\ created contract configuration\end{tabular}} &
+  owner address verify &
+  \multirow{-2}{*}{\cellcolor[HTML]{FFFFFF}Modifiers, Functions} \\ \hline
+\cellcolor[HTML]{FFFFFF} &
+  \cellcolor[HTML]{FFFFFF} &
+  \cellcolor[HTML]{FFFFFF} &
+  set up roles in factory constructor &
+  \cellcolor[HTML]{FFFFFF} \\ \cline{4-4}
+\cellcolor[HTML]{FFFFFF} &
+  \multirow{-2}{*}{\cellcolor[HTML]{FFFFFF}F6} &
+  \multirow{-2}{*}{\cellcolor[HTML]{FFFFFF}Role empowerment} &
+  grand role to specified address &
+  \multirow{-2}{*}{\cellcolor[HTML]{FFFFFF}State Variables, Functions} \\ \cline{2-5} 
+\multirow{-3}{*}{\cellcolor[HTML]{FFFFFF}\begin{tabular}[c]{@{}c@{}}Access \\ Control\end{tabular}} &
+  F7 &
+  Deployer permission detection &
+  require sender has role to deploy contract &
+  Modifiers \\ \hline
+\cellcolor[HTML]{FFFFFF} &
+  \cellcolor[HTML]{FFFFFF} &
+  \cellcolor[HTML]{FFFFFF} &
+  use map/array to track and store which addresses have been deployed &
+  \cellcolor[HTML]{FFFFFF} \\ \cline{4-4}
+\cellcolor[HTML]{FFFFFF} &
+  \multirow{-2}{*}{\cellcolor[HTML]{FFFFFF}F8} &
+  \multirow{-2}{*}{\cellcolor[HTML]{FFFFFF}\begin{tabular}[c]{@{}c@{}}Created contract managed \\ internal factory\end{tabular}} &
+  Mapping of the deployer address to an array of all deployed contracts &
+  \multirow{-2}{*}{\cellcolor[HTML]{FFFFFF}State Variables} \\ \cline{2-5} 
+\multirow{-3}{*}{\cellcolor[HTML]{FFFFFF}\begin{tabular}[c]{@{}c@{}}Tracking \&\\ Maintenance\end{tabular}} &
+  F9 &
+  \begin{tabular}[c]{@{}c@{}}Created contract managed \\ external factory\end{tabular} &
+  emit deployed contract address to the upper layer application &
+  Events \\ \hline
+\end{tabular}%
+}
+\end{table}

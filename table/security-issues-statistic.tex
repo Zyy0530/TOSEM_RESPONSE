@@ -1,0 +1,17 @@
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X} % Define the "R" column type
+\begin{table}[htbp]
+  \centering
+  \footnotesize
+  \caption{Detected Security Issues Related to Factory Contracts}
+  \label{tab:security}
+  \begin{tabularx}{0.6\linewidth}{@{}lR@{}}
+    \toprule
+    \textbf{Issue Name}                     & \textbf{Number} \\
+    \midrule
+    (1) Mutable Code                   & 91     \\
+    (2) Unexpected Ownership Transfer & 267    \\
+    (3) Unhandled Low-Level Contract Creation & 600    \\
+    (4) Unverified Master Contract       & 222    \\
+    \bottomrule
+  \end{tabularx}
+\end{table}

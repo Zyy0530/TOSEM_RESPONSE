@@ -1,0 +1,668 @@
+\documentclass[acmsmall]{acmart}
+\usepackage{hyperref}
+\usepackage{amsmath, amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{nicematrix}
+\usepackage{catchfile}
+\usepackage{pgfplots}
+\usepackage{subcaption}
+\usepackage{mdframed}
+\usepackage{multirow}
+\usepackage{arydshln}
+\usepackage{colortbl}
+\usepackage[most]{tcolorbox}
+\usepackage{lipsum}
+\usepackage{pifont}
+\usepackage{makecell}
+\usepackage{threeparttable}
+
+\AtBeginDocument{ \providecommand{\BibTeX}{{ \normalfont B\kern-0.5em{\scshape i\kern-0.25em b}\kern-0.8em\TeX}}}
+
+\settopmatter{printacmref=false} % Removes citation information below abstract
+\renewcommand{\footnotetextcopyrightpermission}[1]{} % removes footnote with conference information in first column
+\makeatletter
+\let\@authorsaddresses\@empty
+\makeatother
+
+% 评论框样式定义
+\tcbset{ commentbox/.style={ enhanced, colback=blue!5!purple!5, colframe=gray!120, coltitle=white, colbacktitle=gray!120, fonttitle=\bfseries, boxrule=0.5pt, arc=2mm, top=1mm, bottom=1mm, left=2mm, right=2mm, } }
+
+\pretocmd{\section}{\clearpage}{}{}%
+
+\begin{document}
+	\pagestyle{plain}
+	\begin{center}
+		\Large Response Letter for the Manuscript \#TOSEM-2025-0008.R1 \\[1.5em]
+
+		\LARGE\textbf{Patch Generation in APR: A Survey from the Perspectives of Utilizing LLMs and Using
+		APR-Specific Information} \\[1.5em]
+
+		\large ACM Transactions on Software Engineering and Methodology \\[1em]
+
+		\normalsize \textit{August 6, 2025} \\[1.5em]
+
+		\normalsize Yaopeng Yang$^{1}$, Chuanyi Li$^{1\ast}$, Zhifeng Han$^{2}$, Rui Li$^{2}$, Kui
+		Xu$^{2}$, \\ Qingyuan Li$^{1}$, Wenkang Zhong$^{1}$, Zongwen Shen$^{1}$, Zhiwei Fei$^{1}$,
+		Jidong Ge$^{1}$, Bin Luo$^{1}$ \\[1em]
+
+		$^{1}$\textit{State Key Laboratory for Novel Software Technology, Nanjing University, China}
+		\\
+
+		$^{2}$\textit{China Mobile, China} \\[10em]
+	\end{center}
+
+	\renewcommand{\shortauthors}{YaoPeng Yang, et al.}
+	\newcommand{\SectionPosition}[1]{\textbf{$\triangleright$ #1}}
+
+	Firstly, we would like to thank you for your kind letter and constructive comments concerning
+	our paper. All of these comments are valuable and helpful to improve our paper. We have
+	thoroughly discussed all of these comments and made our best effort to update our manuscript
+	according to your feedback to meet the requirements of ACM TOSEM. The positions in the revised manuscript
+	are highlighted by {\color{red} \textbf{RED}} color, and the content of the main changes of the
+	revised manuscript is highlighted by {\color{blue} \textbf{BLUE}} color. Point-by-point responses
+	to the reviewers are listed below.
+
+	\section*{Meta-review from the Editors}
+	\begin{tcolorbox}
+		[commentbox,title=Reviewer \#0 - Comment 1] Overall, the revision has addressed most of the issues
+		raised by the two reviewers. However, there are some minor issues to be fixed: 1. missing
+		citation to the formal publication of SWE-bench, 2. some presentation issues.
+	\end{tcolorbox}
+
+	\noindent
+	\textbf{Response.}
+
+	Dear editor, we sincerely thank you for the positive evaluation of our revised manuscript.
+
+	Regarding the minor issues you mentioned, we have:
+
+	(1). added a proper citation to the formal publication of SWE-bench. The reference has been
+	updated in the citation. In addition, we thoroughly reviewed the citations and corrected several
+	citation errors that had not been previously discovered (e.g., corrected the previous issue of references
+	to SWE-bench Leaderboards without authorship).
+
+	(2). carefully revised the manuscript to address the identified presentation issues.
+	Specifically, we improved the overall clarity by using the uniform Takeaways format: Takeaways
+	of RQn-[Topic].
+	\vspace{1em}
+
+	In addition, we have thoroughly revised and addressed each of the original comments from Reviewer
+	\#2 that were not acknowledged in the previous round. Specifically, we have:
+
+	(1). summarized the main contributions of the paper in the Introduction section to help readers quickly
+	grasp the core insights of this survey.
+
+	(2). removed or consolidated ambiguous columns in Table 2 to enhance clarity and
+	interpretability.
+
+	(3). enriched Figures 3 and 12 by incorporating detailed percentage information to improve their
+	informativeness.
+
+	(4). added Table 6 to systematically summarize and compare the three training strategies
+	discussed in the paper, offering a clearer understanding of their respective characteristics.
+	\vspace{1em}
+
+	We sincerely hope that the revised manuscript meets the accepted standards of ACM TOSEM.
+
+	%=======================审稿人1=========================
+	\section{Comments from Reviewer \#1}
+	%\#\# Summary:
+
+	%Thank you very much for the revisions. Most of my questions have been well addressed, and the manuscript has been revised accordingly. I would like to offer the following suggestions for the new version submitted.
+
+	\begin{tcolorbox}
+		[commentbox,title=Reviewer \#1 - Comment 1] Recommendation: Accept
+
+		Comments: (There are no comments.)
+	\end{tcolorbox}
+
+	\noindent
+	\textbf{Response.} We sincerely appreciate your positive evaluation and support for our manuscript.
+	We are grateful for your time and effort in reviewing our work.
+
+	%===========================审稿人2====================
+
+	\section{Rviewer 2}
+
+	\begin{tcolorbox}
+		[commentbox,title=Reviewer \#2 - Comment 1] For this revision, I appreciate the authors'
+		revision, especially in addressing the test-time scaling and Repository-Level Repair Coverage.
+		Some minor comments: 1. Ensure to cite the formal publication of SWE-bench 2. For takeaway,
+		please use consistent titles: e.g. use Takeaway - add both Topic and RQ X
+	\end{tcolorbox}
+
+	\noindent
+	\textbf{Response.}
+
+	Thank you for your valuable comments regarding the citation format of SWE-bench and the presentation
+	of the Takeaways.
+
+	% 之前对SWE-bench的引用是来自arXiv的预印版，现已改为正式的publication引用
+
+	% Carlos E Jimenez, John Yang, Alexander Wettig, Shunyu Yao, Kexin Pei, Ofir Press, and Karthik R Narasimhan. 2024. SWE-bench: Can Language Models Resolve Real-world Github Issues?. In The Twelfth International Conference on Learning Representations. https://openreview.net/forum?id=VTF8yNQM66
+
+	% 此外，Takeaway也统一了格式：Takeaways of RQn-Topic。以下是一个例子：
+
+	The previous citation of SWE-bench referred to its arXiv preprint version. We have now updated it
+	to cite the formal publication:
+
+	\color{blue}
+	Carlos E. Jimenez, John Yang, Alexander Wettig, Shunyu Yao, Kexin Pei, Ofir Press, and Karthik R.
+	Narasimhan. 2024. SWE-bench: Can Language Models Resolve Real-world GitHub Issues? In
+	Proceedings of the Twelfth International Conference on Learning Representations.\url{https://openreview.net/forum?id=VTF8yNQM66}
+	\color{black}
+
+	In addition, we have standardized the format of the Takeaways across the paper. The new format follows
+	the structure: Takeaways of RQn-[Topic]. Below is an example:
+
+	\color{blue}
+	Takeaways of RQ3-Repository-level Repair
+	\color{black}
+
+	\begin{tcolorbox}
+		[commentbox,title=Reviewer \#2 - Comment 2] The authors have made substantial improvements
+		to this survey paper in response to the initial reviews. However, there appears to have been
+		some miscommunication, as the review I previously submitted does not seem to have been made available
+		to the authors. (I apologize if I contributed to this.) I would appreciate it if the authors
+		could address the comments below, as I believe the paper should not be published until these
+		points are properly considered.
+	\end{tcolorbox}
+
+	\noindent
+	\textbf{Response.}
+
+	We regret that the earlier review was not available to us during the previous revision round. If
+	it had been, we would certainly have addressed those comments at that time. We are grateful that
+	you have shared them again, and we have now carefully revised the manuscript in response to each
+	point raised. \textit{We would like to respectfully point out that the majority of the concerns
+	you raised in your original review were already thoroughly addressed in our first-round revision.}
+
+	\begin{tcolorbox}
+		[commentbox,title=Reviewer \#2 - Comment 3] Introduction section, I recommend authors clearly
+		articulate the contributions of this research in the introduction section.
+	\end{tcolorbox}
+
+	\noindent
+	\textbf{Response.}
+
+	We have added a summary of contributions in the Introduction (
+	\color{red}
+	Section 1
+	\color{black}
+	) to help readers quickly grasp the core insights of this survey. Details are as follows:
+
+	\color{blue}
+	\begin{itemize}
+		\item \textbf{Four Analytical Dimensions:} We organize the discussion of LLM-based patch
+			generation methods across four well-structured dimensions—Task Style, LLM Utilization Techniques,
+			Reasoning Strategy, and Input Strategy—providing a layered and systematic analysis framework.
+
+		\item \textbf{Three Key Factors:} We explore three critical factors that influence the
+			performance of LLM-based APR: the selection of LLMs, the input information (including input
+			representation and context), and fine-tuning configurations (including datasets and
+			three categories of fine-tuning strategies).
+
+		\item \textbf{Three Evaluation Focuses:} For the first time, we summarize the trends and characteristics
+			of repository-level benchmarks and corresponding repair, exploring the test-time scaling
+			effect in patch generation. Furthermore, we reveal the data leakage issues and
+			mitigation strategies.
+
+		\item \textbf{Two Complementary Perspectives:} Beyond the overarching LLM Utilization
+			Perspective, we introduce a novel APR-specific Perspective that emphasizes the value and
+			characteristics of APR-specific information. Through targeted case analyses, we extract three
+			insightful conclusions.
+
+		\item \textbf{Ten Future Directions:} Grounded in real-world challenges and current research
+			bottlenecks, we articulate ten well-founded and forward-looking directions for the future
+			development of APR in the LLM era.
+	\end{itemize}
+	\color{black}
+
+	\begin{tcolorbox}
+		[commentbox,title=Reviewer \#2 - Comment 3] line 28-33, Page 6: A major concern is that I'm
+		not convinced that the difference between this work and Zhang et al. is clearly described. I
+		feel very reluctant to say this paper adds a quantifiable contribution on top of Zhang et al.'s
+		work. It's unfortunate that a number of contents mentioned in this paper have already been
+		discussed in Zhang et al., such as "distributions of involved LLMs", etc. For the research
+		questions, RQ1 and RQ2 have also been extensively discussed by Zhang et al., although the authors
+		tried to highlight the "APR-specific information" in the discussions. Authors should modify
+		the paper so that the contribution on top of Zhang et al. can be clearly articulated.
+	\end{tcolorbox}
+
+	\noindent
+	\textbf{Response.}
+
+	Thank you for raising this point. We would like to note that this issue was already addressed in
+	our previous revision and response. In fact, a similar comment was raised by another reviewer in
+	the earlier round, as we made substantial revisions to the manuscript accordingly and carefully
+	discussed the similarities and differences between our work and that of Zhang et al. \cite{S2}.
+
+	The following is the relevant content of the previous response letter. ($\Downarrow$)
+	\vspace{1em}
+	\hrule \hrule
+	\vspace{1em}
+	\textbf{Main Similarities:}
+	\begin{itemize}
+		\item \textbf{Background Overview of APR.}
+			\newline
+			Both provide an overview of the background of APR, e.g., the main phrases of APR, and
+			the historical evolution of patch generation techniques.
+			\newline
+
+			\textbf{Analysis:} Our treatment of this content corresponds to
+			\color{red}
+			Section 2.1
+			\color{black}
+			of the revised manuscript. Such an overview is essential to orient readers---particularly
+			those unfamiliar with APR---and facilitate deeper engagement with the rest of the survey.
+
+			\hspace*{1em}Furthermore, our background description is more tightly aligned with our
+			specific research focus. For example, we give a more detailed account of template-based
+			techniques in the history of patch generation methods (
+			\color{red}
+			Page 4, Line 24
+			\color{black}
+			), which lays the foundation for understanding later discussions on repair templates. Conversely,
+			the section on defect localization (
+			\color{red}
+			Page 3, Line 18
+			\color{black}
+			) is kept concise and contextually relevant, since our primary focus is patch generation
+			using LLMs.
+			\newline
+
+		\item \textbf{Trend Analysis in APR Research.}
+			\newline
+			Both works analyze trends in the APR field.
+			\newline
+
+			\textbf{Analysis: }Although both analyze trends, the focus is almost entirely different.
+			\textit{Review} emphasizes publication trends (e.g., by venue, programming language, and
+			study type). In contrast, our Survey focuses on the substantive evolution of research content.
+			Specifically, we analyze trends in inputs (e.g., APR-specific information), granularity
+			of repair (from function-level to repository-level), and inference strategies (e.g.,
+			iterative and agent-based approaches), providing a more technical and application-oriented
+			aspect.
+			\newline
+
+		\item \textbf{Discussion of Patch Generation Techniques for LLM-based APR.}
+			\newline
+			Both surveys examine techniques for patch generation using LLMs.
+			\newline
+
+			\textbf{Analysis: }However, our organizational framework is significantly different from
+			\textit{Review}. \textit{Review} sets Fine-tuning, Few-shot, and Zero-shot Learning (including
+			cloze-style and conversational-based repair) to discuss the techniques for generating
+			patches using LLM. In contrast, we propose a broader, more detailed taxonomy encompassing
+			four dimensions (
+			\color{red}
+			Section 4.1-4.4
+			\color{black}
+			): Task Style, LLM Utilization Techniques, Reasoning Strategies, and Input Strategies.
+			Our framework can be viewed as a superset of the \textit{Review}’s and supports a deeper
+			and more comprehensive technical discussion.
+			\newline
+	\end{itemize}
+
+	\textbf{Main Differences}
+
+	\begin{itemize}
+		\item \textbf{Finer-Grained and More Comprehensive Analysis of Input Information.}
+			\newline
+			The \textit{Review} explores the input forms of software bugs transformed into when utilizing
+			LLMs, and categorizes them into Raw Bug-fixing Input, Prompt Input, Mask Input, Conversation-Style
+			Representation, and Structure-Aware Input. These focus on the structure or form of the input,
+			not the detailed information content. In contrast, we provide a detailed summary and
+			analysis of input information according to fine-tuning and prompting techniques in
+			\color{blue}
+			\textbf{5.2 Input in LLM}
+			\color{black}
+			spanning up to 6 pages (
+			\color{red}
+			Section 5.2
+			\color{black}
+			), aiming to guide researchers in optimizing LLM inputs for patch generation.
+			\newline
+
+		\item \textbf{In-Depth Exploration of Fine-tuning Configurations.}
+
+			The \textit{Review} briefly mentions fine-tuning in just two paragraphs in Section 5.2, whereas
+			we offer a detailed discussion of the impact of different fine-tuning configurations on the
+			patches generation by LLMs (
+			\color{red}
+			Section 5.3
+			\color{black}
+			). Our exploration includes fine-tuning data, training strategies. Under the latter
+			aspect, we categorize related works into autoregressive fine-tuning, masked prediction
+			fine-tuning, and preference alignment fine-tuning, aiming to guide researchers in
+			selecting and designing effective fine-tuning methods for LLM-based APR.
+			\newline
+
+		\item \textbf{Focused Discussion on Repository-Level Repair and Benchmarks.}
+
+			Repository-level repair has emerged as a key research trend in the recent APR community,
+			yet the \textit{Review} provides minimal coverage of this topic. To our knowledge, this manuscript
+			is the first survey to discuss repository-level repair systems systematically. In
+			\color{red}
+			Section 6.1
+			\color{black}
+			, we analyze \textbf{benchmark evolution} over time, highlighting the increasing
+			prevalence of repository-level benchmarks (e.g., SWE-bench) over traditional function-level
+			ones. Relevantly, we also analyze three unique \textbf{characteristics of repository-level
+			repair} in this section and summary \textbf{pioneering SWE-bot} in
+			\color{red}
+			Table 6.
+			\color{black}
+			\newline
+
+		\item \textbf{Valuable Reasoning Suggestions from Test-time Scaling Effect.}
+
+			Test-time scaling---distinct from parameter scaling---has become a central topic in LLM research.
+			In
+			\color{red}
+			Section 6.2
+			\color{black}
+			, we examine its implications for patch generation and introduce a taxonomy of inference
+			strategies, including vertical scaling (e.g., iterative and agent methods) and parallel scaling
+			(e.g., LLM-as-reviewer and decoding optimization). We present two key conclusions:
+
+			\color{blue}
+			\textbf{Conclusion 1: Within certain bounds, patch generation effectiveness improves
+			with increased reasoning computation, exhibiting a trend that roughly exhibits a trend that
+			roughly follows a logarithmic curve.}
+
+			\textbf{Conclusion 2: Additional reasoning computations for smaller or weaker models can
+			outperform fewer reasoning computations for stronger models. }
+			\newline
+			\color{black}
+
+			and offer two practical suggestions:
+
+			\color{blue}
+			\textbf{Suggestion 1: Avoid arbitrarily, crudely extending inference length or
+			introducing redundant computations.}
+
+			\textbf{Suggestion 2: Focus on the usage and orchestration of external tools.}
+			\color{black}
+			\bigskip
+
+			, which we believe are valuable contributions to the APR community, particularly as reasoning
+			phrase becomes a central focus in LLM utilization and optimization.
+			\newline
+
+		\item \textbf{Reader-Oriented and Actionable Takeaways.}
+
+			Unlike the \textit{Review}, which tends to summarize content descriptively in “Summary”,
+			each item in our “Takeaways” are explicitly designed to provide actionable insights. They
+			are oriented toward practitioners and researchers, aiming to facilitate better decision-making
+			and foster future advancements in LLM-based APR.
+	\end{itemize}
+
+	In summary, the main relationship between our Survey's \textbf{\textit{LLM utilization
+	perspective}} and the \textit{Review} is not overlapping, but rather complementary. The \textit{Review}
+	excels in analyzing the literature publish trend and the breakdown of repair scenarios, which
+	are not present in and are not the focus of our work. Conversely, our survey contributes deeper
+	technical insights into key areas such as \textit{input optimization}, \textit{fine-tuning
+	strategies}, \textit{reasoning paradigms}, \textit{repository-level repair}, and \textit{test-time
+	scaling effect}.
+
+	Moreover, it's important to note that the \textbf{\textit{APR-specific perspective}}---another core
+	dimension of our survey---is completely absent from the \textit{Review}. This further highlights
+	the distinctiveness and added value of our work to the LLM-based APR research community.
+
+	\vspace{1em}
+	\hrule \hrule
+
+	\begin{tcolorbox}
+		[commentbox,title=Reviewer \#2 - Comment 4] Table 2, I like the table provided by the authors
+		that summarizes the differences for the surveys in this area. I appreciate it if the author
+		could distinguish more clearly "APR-specific discussion" and "APR-specific / General Features".
+		It would greatly help if the differences could be visualized in a graph, highlighting the
+		unique contribution of this survey. On this note, I recommend authors formally formalize the
+		definition of terminologies such as "APR-specific information/specifications" to help better
+		understand authors' contribution (it can be neglected if it is only mentioned in the text)
+	\end{tcolorbox}
+
+	% 非常抱歉我们对Table2的展示让您感到困惑。
+	% 认真分析您的回复之后，我们猜测您的疑惑首先来自于Table2中"APR-specific discussion"和""APR-specific / General Features"，您认为这两个是与APR-specific information类似的两个专有名词，并且想让我们明晰这三个专有名词，最好是可视化的方式。实际上，本文的意思并非如此，接下来让我详细解释。
+
+	% APR-specific Perspective和 APR-specific information是本文的专有名词，并且在Introduction中清晰的定义：
+
+	% 而APR-specific discussion和APR-specific / General Features则是仅在表2中出现，并非专有名词。APR-specific discussion指的是文献综述/survey中是否出现关于APR-specific的讨论，例如 Monperrus et al. [ 141 ] propose for the first time Domain-specific Repair, i.e., doing automatic repair in contexts of a particular application domain. APR-specific / General Features指的是文献综述/survey中是否有区分"APR-specific" 和 “general”不同的特征。
+
+	% 为了避免Table2给读者后续阅读带来的歧义，我们将"APR-specific discussion"合并到""APR-specific / General Features"。这一出发点是APR-specific / General Features其实是包括APR-specific discussion的，因为如果文献对APR-specific Features和 General Features进行对比，则必然会涉及APR-specific discussion。
+
+	% 修改后的表二如下：
+
+	\noindent
+	\textbf{Response.}
+
+	We sincerely apologize for the confusion caused by our presentation of
+	\color{red}
+	Table 2
+	\color{black}
+	.
+
+	After carefully reviewing your comment, we believe the confusion may have arisen from the terms
+	``APR-specific discussion'' and ``APR-specific/General Features'' in Table 2. It seems that you
+	interpreted these as technical terms similar to ``APR-specific information'', and suggested that
+	we clarify the distinction between these three concepts, preferably in a visualized manner.
+
+	However, this was not our intended meaning. Please allow us to clarify.
+
+	In our manuscript, ``APR-specific Perspective'' and ``APR-specific information'' are the two core
+	concepts, and both are clearly defined in the Introduction. Detailed are as follows:
+
+	\color{blue}
+	In order to differentiate from general knowledge, we define \textbf{\textit{APR-specific
+	information}} as information specifically applied to and required by APR, rather than other SE
+	or general NLP tasks, and that is closely tied to bugs, including their identification and
+	repair, such as error message, bug-fix pair. Given this landscape, we explore the distinctive
+	role of APR-specific information in the APR task, which we term the \textbf{\textit{APR-specific
+	Perspective}}. From this perspective, we emphasize that in the era of LLMs, while relying on the
+	increasing general-purpose capability and extensive information inherent in models, it is
+	equally crucial to focus on the mining and application of APR-specific information.
+	\color{black}
+
+	In contrast, the terms ``APR-specific discussion'' and ``APR-specific/General Features'' appear only
+	in Table 2 and are not intended as technical terms.
+
+	By ``APR-specific discussion'', we refer to whether the survey includes a discussion focused on
+	APR-specific aspects. For example, Monperrus et al. \cite{S7} introduced the notion of Domain-specific
+	Repair, i.e., performing automatic program repair within the context of a particular application
+	domain.
+
+	The term ``APR-specific/General Features'' indicates whether the survey explicitly distinguishes
+	between APR-specific and general features in its analysis.
+
+	To avoid potential ambiguity for readers, we have revised
+	\color{red}
+	Table 2
+	\color{black}
+	(see Figure \ref{f:t2} for detailed comparison) in the revision manuscript by merging the two entries—APR-specific
+	discussion and APR-specific/General Features—into a single category. Our rationale is that any
+	survey that compares APR-specific features with general features will necessarily involve an APR-specific
+	discussion, and thus the latter is subsumed under the former.
+
+	\begin{figure}[t!]
+		\centering
+		\includegraphics[width=1\textwidth]{fig/response-com.pdf}
+		\caption{Before-and-after comparison of Table 2.}
+		\label{f:t2}
+	\end{figure}
+
+	\begin{tcolorbox}
+		[commentbox,title=Reviewer \#2 - Comment 5] Line 49, Page 9 (section 4): I appreciate it if
+		the authors could add more details about automated fault localization, such as what percentage
+		of research work needs automatic fault localization specifically.
+	\end{tcolorbox}
+
+	% 看来审稿人比较关注缺陷定位。值得指出的是，我们在上一轮修改中已经将本论文的主题划定为APR中的补丁生成，因此详细讨论缺陷定位并非本文的重点。尽管如此，实际上我们依然在上一轮的修改中添加了很多对缺陷定位的描述。这些描述被放在库级别修复的趋势探讨中（Section xx）。我们添加了很多最新的库级别缺陷定位的案例分析，详细描述了库级别缺陷定位的最新技术。我们认为这一价值已经超越了简单的百分比的统计。
+	% 原文内容如下：
+
+	\noindent
+	\textbf{Response.}
+
+	The reviewer’s concern regarding fault localization is duly noted. It is important to emphasize that,
+	in the previous revision, we deliberately narrowed the scope of this paper to concentrate specifically
+	on patch generation within APR. Consequently, an exhaustive treatment of fault localization falls
+	outside the primary focus of this study.
+
+	Nonetheless, we have integrated substantial material related to fault localization in our prior
+	revision. In particular, we enriched the discussion on repository-level repair trends (
+	\color{red}
+	Section 6.1.1
+	\color{black}
+	) by incorporating several recent case studies that highlight advances in fault localization techniques
+	at the repository level. These additions reflect the cutting-edge developments in this domain.
+
+	We contend that this detailed qualitative analysis provides greater insight and utility than a
+	mere quantitative summary based on percentages. Details in manuscripts are as follows:
+
+	\color{blue}
+	More important repository-level bug localization and repair ingredient code extraction. In
+	repository-level repair, bug localization is often intertwined with repair ingredient code research
+	and extraction. Specifically, repository-level bug localization aims to identify suspected bug locations
+	from large codebases, where the main challenge lies in effectively associating natural language
+	problem descriptions with appropriate code elements [43]. Meanwhile, repair ingredient code
+	extraction aims to obtain hierarchical code contexts related to the bug locations, which typically
+	span files, functions and statements, where the key difficulty is cross-hierarchical and multi-dependency
+	relationship reasoning, as well as the control of context length [40, 215].
+
+	Chen et al.[40] propose RLCE, a static analysis approach designed to accurately extract
+	simplified context from a codebase based on known bug locations. The method first parses the repository
+	file and constructs a project structure tree comprising multiple hierarchical layers:
+	directories, files, classes, functions, and global variables, and tracks cross-file references,
+	such as function calls or class usages, to annotate file nodes with inter-file dependencies.
+	RLCE then searches in the project structure tree based on the bug locations (one or more lines of
+	code) to obtain the required code segments, including the Error Invoking Function (EIF), its
+	caller, the Error Function (EF), and its caller. Finally, these function bodies, function signatures
+	with summaries, or call line context slices will be input into prompts for LLMs to perform the
+	repair.
+
+	Chang et al.[32] find that existing approaches, although most adopt hierarchical structures,
+	neglect the differences in semantic content and dependencies at different levels. For example,
+	function-level code relies on function calls, while statement-level code relies on data and control
+	dependencies between statements. To address this limitation, they propose BugCerberus, which
+	accomplishes the task of targeted bug localization by customized fine-tuning LLMs in three
+	levels: file, function, and statement.
+
+	Chen et al.[43] further advanced this line of research by introducing LocAgent, a specialized
+	framework for LLM-driven code localization, including bug localization. LocAgent first parses
+	the codebase to build heterogeneous directed graphs, where nodes represent code entities at varying
+	levels (e.g., files, functions, classes), and edges encode diverse dependency types (e.g., containment,
+	invocation, inheritance). These graphs are paired with sparse indexing mechanisms. The framework
+	equips an LLM agent with three retrieval tools—SearchEntity, TraverseGraph, and RetrieveEntity- allowing
+	it to iteratively search, infer, and refine its understanding of the code structure.
+	Experimental results on SWE-bench-Lite demonstrate that LocAgent significantly surpasses
+	Agentless [215], SWE-Agent [234], and OpenHands [193] in the bug localization task, especially in
+	fine-grained function localization.
+	\color{black}
+
+	\begin{tcolorbox}
+		[commentbox,title=Reviewer \#2 - Comment 6] Figure 3, Figure 11. To get more information to the
+		readers, authors should add the distributions (maybe also references in addition) of each
+		category in this figure. The same is true for Figure 11 (add percentage).
+	\end{tcolorbox}
+
+	\noindent
+	\textbf{Response.}
+	% 感谢您的有价值的建议。我们已经分别在图n和图x中添加了研究数量占比情况，这将有利于读者更加直观的xxx。
+	% 值得注意的是，尽管原始的图3已经完全被删除，我们仍然在新的图3中加入了百分比的元素。我们只在Task Style和LLM Utilization Tech.两个维度中加入了百分比，因为其他两个维度存统计百分比没有意义，例如目前iterative的推理方式要比agent的工作多不少，展示百分比可能会误导读者忽视agent推理方式，但是这仅仅是因为受限于过去的技术发展。再比如RAG和In-Context Learinig并非二元对立的两种方法，他们互相交叉和促进，因此统计百分比也无意义。总之，我们参考审稿意见的同时，充分考虑细节，对现有的图3和图n做出了优化。
+
+	\begin{figure}[t!]
+		\centering
+		\includegraphics[width=1\textwidth]{fig/RQ1-v1.pdf}
+		\caption{Four discussion dimensions for RQ1.}
+		\label{f:rq1}
+	\end{figure}
+
+	Thank you for your valuable suggestions. We have incorporated the percentage distribution of
+	research quantities into Figure \ref{f:rq1} (
+	\color{red}
+	Figure 3
+	\color{black}
+	in manuscript) and Figure \ref{f:flow} (
+	\color{red}
+	Figure 12
+	\color{black}
+	in manuscript), which helps readers more clearly and intuitively understand the distribution and
+	proportion of research in each category.
+
+	Notably, although the original Figure 3 has been entirely removed, percentage elements have still
+	been integrated into the newly designed
+	\color{red}
+	Figure 3
+	\color{black}
+	. Specifically, we added percentage annotations for two dimensions: Task Style and LLM Utilization
+	Technique. In contrast, percentages were intentionally omitted from the other two dimensions,
+	where such representations could be misleading or uninformative.
+
+	For instance, the current dominance of iterative reasoning over agent-based reasoning is largely
+	a reflection of historical technological limitations rather than intrinsic superiority.
+	Including percentages in this case might unintentionally downplay the value and potential of
+	agent-based approaches. Likewise, RAG and In-Context Learning are not mutually exclusive
+	paradigms—they overlap and complement one another—rendering percentage-based comparisons
+	inappropriate.
+
+	In summary, while carefully incorporating the reviewers’ feedback, we have thoroughly revised
+	and optimized the new
+	\color{red}
+	Figure 3
+	\color{black}
+	and
+	\color{red}
+	Figure 12
+	\color{black}
+	to ensure both clarity and accuracy in the presentation of information.
+
+	\begin{figure}[t!]
+		\centering
+		\includegraphics[width=0.8\textwidth]{fig/chart-1.pdf}
+		\caption{The flow of APR-specific and General information types to patch generation
+		techniques.}
+		\label{f:flow}
+	\end{figure}
+
+	\begin{tcolorbox}
+		[commentbox,title=Reviewer \#2 - Comment 7] Line 32, Page 23 (section 5.3.2): authors should
+		add a table/figure that helps better describe Training Strategies
+	\end{tcolorbox}
+
+	\noindent
+	\textbf{Response.}
+
+	Thank you very much for your valuable suggestion and reminder. We agree that summarizing the training
+	strategies in tabular form is necessary, especially considering that we have added new content
+	to this section in the previous round of revisions.
+
+	The summary and comparison of training strategies are now presented in
+	\color{red}
+	Table 6
+	\color{black}
+	. We have carefully added this table to provide a structured overview of each training strategy
+	category, including their descriptions, representative works, input/output, and application
+	scenarios. This addition is intended to help readers more intuitively and comprehensively understand
+	the distinctions among different training strategies.
+
+	\begin{tcolorbox}
+		[commentbox,title=Reviewer \#2 - Comment 8] Line 41, Page 26 (section 7): I appreciate the
+		takeaway section that summarized this survey. I suggest the authors connect the takeaways to
+		the RQs. Besides, I also recommend authors organize the takeaways in a graph or table instead
+		of plain text.
+	\end{tcolorbox}
+
+	% Takeaway的展示问题已经在上一轮修改中解决
+	\noindent
+	\textbf{Response.}
+
+	The issue with presenting the Takeaways clustered in one whole section has been well resolved in
+	the previous round of revisions.
+
+	\bibliographystyle{ACM-Reference-Format}
+	\bibliography{reference}
+\end{document}

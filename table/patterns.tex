@@ -1,0 +1,23 @@
+\begin{table}[t]
+	\centering
+	\setlength{\extrarowheight}{1pt}
+	\caption{Identified Factory-based Patterns}
+	\label{tab:patterns} \scriptsize
+	\begin{tabular}{|m{0.114\textwidth}|m{0.36\textwidth}|m{0.36\textwidth}|}
+		\hline
+		\textbf{Pattern Name}\centering & \textbf{Motivation}\centering                                                                           & \textbf{Used Functionalities}                                                                                                                                 \\
+		\hline
+		Template Configuration Pattern  & Facilitate efficient deployment and configuration of identical contracts                                & Use new or \textit{create} / \textit{create2} to deploy contracts. Then call init\_function or pass parameters to the constructor for contract initialization \\
+		\hline
+		Proxy Delegation Pattern        & Optimize gas costs by deploying minimal proxy contracts for identical contracts                         & Use Clones library to deploy minimized proxy contracts. Validate the untrusted master contract                                                                \\
+		\hline
+		Centralized Registry Pattern    & Improve management efficiency and traceability of deployed contracts through a centralized approach     & Use \textit{map} / \textit{array} to store and keep track of all deployed contracts. Check which contracts have been previously deployed                      \\
+		\hline
+		Keyless Singleton Pattern       & Deploy contracts with the same init code to the same address in multiple blockchains                    & Use Nick's method to deploy keyless factories. Utilize \textit{create2} for deterministic contract address independent of deployer's nonce                    \\
+		\hline
+		Salted Address Pattern          & Calculating the contract address requires only the deployer's address and salt, excluding initcode hash & Utilize \textit{create2} opcode for deterministic contract address independent of deployer account's nonce                                                    \\
+		\hline
+		Metamorphic Factory Pattern     & Support contract upgradeability and some malicious purposes                                             & Use \textit{selfdestruct} opcode to clear contract code and storage. Use a transient factory to deploy metamorphic contracts                                  \\
+		\hline
+	\end{tabular}
+\end{table}

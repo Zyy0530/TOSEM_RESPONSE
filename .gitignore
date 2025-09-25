@@ -1,0 +1,26 @@
+vscode
+.DS_Store
+out
+.claude
+.idea
+node_modules
+package-lock.json
+package.json
+.prettierrc.json
+.prettierignore
+requirements
+conceive
+
+TODO.md
+.env
+
+# LaTeX build files
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.pdf
