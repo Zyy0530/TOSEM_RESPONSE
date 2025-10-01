@@ -5,6 +5,7 @@
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{booktabs}
+\usepackage{multirow}
 \usepackage{tabularx}
 \usepackage[most]{tcolorbox}
 \usepackage{pifont}
@@ -46,6 +47,12 @@
 	\textbf{Color Convention.} Pointers to locations in the revised manuscript appear in \textcolor{red}{\textbf{RED}}
 	(e.g., \textcolor{red}{\textbf{RQ1, RQ2, Related Work}}), while concise summaries of the main
 	changes appear in \textcolor{blue}{\textbf{BLUE}}. Body text remains black for readability.
+
+	\vspace{0.25em}
+	\noindent
+	\textbf{Reference Convention.} Unless explicitly stated otherwise, all RQ, Section, Figure, and Table
+	references in this response correspond to the \emph{revised manuscript}, not the prior submission.
+	Section numbering and identifiers therefore reflect the revised version.
 
 	\newpage
 
@@ -217,12 +224,16 @@
 	surveys and broader context.
 
 	\textit{Revision and current status.} We expand Related Work with recent surveys and relevant literature,
-	and include broader EVM-compatible context where applicable.
+	and include broader EVM-compatible context where applicable. In particular, we additionally add
+	a \emph{Factory Contracts and Deployment Mechanisms} subsection that synthesizes deployment opcodes
+	(CREATE/CREATE2), metamorphic behaviors, factory interface mining, and deployment engineering
+	practices to situate our study within the broader ecosystem (\textbf{Section 5.3}).
 
 	\vspace{0.25em}
-	\textit{Position in revised manuscript.} {\color{red}\textbf{Related Work (Section 5); RQ2 (Section 3.7); Threats to Validity (Section 4.2)}}
+	\textit{Position in revised manuscript.}
+	{\color{red}\textbf{Related Work (Section 5); RQ2 (Section 3.7); Threats to Validity (Section 4.2)}}
 
-	\textit{Main change.} {\color{blue}\textbf{Broadened literature + cross-chain context}}
+	\textit{Main change.} {\color{blue}\textbf{Broadened literature + multi chain context}}
 
 	% Comment 7 — Other changes (each sub-point quoted verbatim)
 	\begin{tcolorbox}
@@ -236,9 +247,9 @@
 
 	\textit{Acknowledgement.} The previous version’s clustering leaned on name-based features.
 
-	\textit{Revision and current status.} We redesign clustering with multi-view features (name
-	tokens, structure/size, mechanism flags, access-control/libraries, domain keywords),
-	standardized + PCA (Varimax) + KMeans (k=4), and provide t-SNE visualization.
+	\textit{Revision and current status.} We redesign clustering with multi-view features (name tokens,
+	structure/size, mechanism flags, access-control/libraries, domain keywords), standardized + PCA (Varimax)
+	+ KMeans (k=4), and provide t-SNE visualization.
 
 	\textit{Position in revised manuscript.} {\color{red}\textbf{RQ3 (Section 3.8)}}
 
@@ -253,13 +264,14 @@
 	\noindent
 	\textbf{Response.}
 
-	\textit{Acknowledgement.} We focused on create2-centric risks previously and under-emphasized broader
-	upgradeable-contract risks.
+	\textit{Acknowledgement.} We focused on create2-centric risks previously and under-emphasized
+	broader upgradeable-contract risks.
 
-	\textit{Revision and current status.} We add discussion of proxy/upgrade risks (e.g., storage collisions,
-	initialization, access-control) and connect them to factory-mediated deployments.
+	\textit{Revision and current status.} We add discussion of proxy/upgrade risks (e.g., storage
+	collisions, initialization, access-control) and connect them to factory-mediated deployments.
 
-	\textit{Position in revised manuscript.} {\color{red}\textbf{RQ3 (Section 3.8); RQ4 (Section 3.9); RQ5 (Section 3.10)}}
+	\textit{Position in revised manuscript.}
+	{\color{red}\textbf{RQ3 (Section 3.8); RQ4 (Section 3.9); RQ5 (Section 3.10)}}
 
 	\textit{Main change.} {\color{blue}\textbf{Broader upgradeable-contract risks acknowledged}}
 
@@ -272,14 +284,12 @@
 	\noindent
 	\textbf{Response.}
 
-	\textit{Acknowledgement.} The prior version was Ethereum-only and did not discuss
-	generalizability.
+	\textit{Acknowledgement.} The prior version was Ethereum-only and did not discuss generalizability.
 
-	\textit{Revision and current status.} We extend to Ethereum+Polygon and explicitly discuss external
-	validity and generalizability.
+	\textit{Revision and current status.} We extend to Ethereum+Polygon and explicitly discuss
+	external validity and generalizability.
 
-	\textit{Position in revised manuscript.}
-	{\color{red}\textbf{RQ2 (Section 3.7); Threats to Validity (Section 4.2)}}
+	\textit{Position in revised manuscript.} {\color{red}\textbf{RQ2 (Section 3.7); Threats to Validity (Section 4.2)}}
 
 	\textit{Main change.} {\color{blue}\textbf{Multi-chain scope; external validity}}
 
@@ -292,14 +302,14 @@
 	\noindent
 	\textbf{Response.}
 
-	\textit{Acknowledgement.} We acknowledge that several patterns and concerns are known; novelty
-	lies in rigorous, large-scale, FSC-centered measurement and tooling.
+	\textit{Acknowledgement.} We acknowledge that several patterns and concerns are known; novelty lies
+	in rigorous, large-scale, FSC-centered measurement and tooling.
 
-	\textit{Revision and current status.} We explicitly position contributions as large-scale measurement
-	+ validated bytecode-level factory detection + FSC-aware security taxonomy and mitigations.
+	\textit{Revision and current status.} We explicitly position contributions as large-scale
+	measurement + validated bytecode-level factory detection + FSC-aware security taxonomy and
+	mitigations.
 
-	\textit{Position in revised manuscript.}
-	{\color{red}\textbf{Introduction (Section 1); RQ1 (Section 3.6); RQ5 (Section 3.10)}}
+	\textit{Position in revised manuscript.} {\color{red}\textbf{Introduction (Section 1); RQ1 (Section 3.6); RQ5 (Section 3.10)}}
 
 	\textit{Main change.} {\color{blue}\textbf{Contributions framed precisely}}
 
@@ -318,9 +328,11 @@
 	\textit{Main change.} {\color{blue}\textbf{Typos and references corrected}}
 
 	\vspace{0.25em}
-	\textit{Position in revised manuscript.} {\color{red}\textbf{RQ3 (Section 3.8); RQ4 (Section 3.9); RQ5 (Section 3.10); RQ2 (Section 3.7); Threats to Validity (Section 4.2)}}
+	\textit{Position in revised manuscript.}
+	{\color{red}\textbf{RQ3 (Section 3.8); RQ4 (Section 3.9); RQ5 (Section 3.10); RQ2 (Section 3.7); Threats to Validity (Section 4.2)}}
 
-	\textit{Main change.} {\color{blue}\textbf{Multi-view clustering; upgrade risks acknowledged; multi-chain generalization}}
+	\textit{Main change.}
+	{\color{blue}\textbf{Multi-view clustering; upgrade risks acknowledged; multi-chain generalization}}
 
 	% ================== Reviewer 1 =======================
 	\newpage
@@ -334,16 +346,17 @@
 	\noindent
 	\textbf{Response.}
 
-	\textit{Acknowledgement.} We agree that the previous Section 6.2 was shallow and missed recent surveys
-	and non-Ethereum context.
+	\textit{Acknowledgement.} We agree that the previous Section 6.2 was shallow and missed recent
+	surveys and non-Ethereum context.
 
-	\textit{Revision and current status.} We expand Related Work with recent literature on
-	deployment, proxies/upgradeability, and smart-contract security tooling, and we broaden scope to
-	EVM-compatible chains by including Polygon and discussing external validity/generalizability.
+	\textit{Revision and current status.} We expand Related Work with recent literature on deployment,
+	proxies/upgradeability, and smart-contract security tooling, and we broaden scope to EVM-compatible
+	chains by including Polygon and discussing external validity/generalizability. We also add a dedicated
+	\emph{Factory Contracts and Deployment Mechanisms} subsection that consolidates prior work on
+	CREATE/CREATE2, metamorphic code, factory interface usage, and deployment pipelines to provide a
+	focused survey context for our contributions (\textbf{Section 5.3}).
 
-	\vspace{0.25em}
-	\textit{Position in revised manuscript.}
-	{\color{red}\textbf{Related Work (Section 5); RQ2 (Section 3.7); Threats to Validity (Section 4.2)}}
+	\textit{Position in revised manuscript.}{\color{red}\textbf{Related Work (Section 5); RQ2 (Section 3.7); Threats to Validity (Section 4.2)}}
 
 	\textit{Main change.}
 	{\color{blue}\textbf{Expanded literature coverage; multi-chain scope (Ethereum+Polygon; RQ2 figures/tables)}}
@@ -467,9 +480,19 @@
 
 	\textit{Acknowledgement.} We agree the previous text insufficiently distinguished these gaps.
 
-	\textit{Revision and current status.} We restructure the Introduction and abstract to articulate
-	distinct gaps and align the narrative accordingly (prevalence/domains; patterns beyond proxies;
-	factory-aware security).
+	\textit{Revision and current status.} We rewrote the limitation statements into three clearly separated
+	research gaps and aligned contributions/RQs accordingly: (i) ecosystem-scale prevalence and
+	domains (not covered before), (ii) comprehensive coverage of factory implementation patterns beyond
+	proxies, and (iii) factory-aware security analysis that distinguishes risks in factory \emph{contracts}
+	versus \emph{factory-deployed} contracts. The Introduction now states these three gaps explicitly,
+	the contribution bullets map 1:1 to them, and the RQ framing mirrors this separation (RQ2 for
+	prevalence, RQ3 for patterns, RQ5 for security).
+
+	\textit{Position in revised manuscript.}
+	{\color{red}\textbf{Introduction (Section 1); Background (Section 2); RQ2 (Section 3.7); RQ3 (Section 3.8); RQ5 (Section 3.10)}}
+
+	\textit{Main change.}
+	{\color{blue}\textbf{Limitations clarified into three distinct gaps; contributions and RQs remapped}}
 
 	\begin{tcolorbox}
 		[commentbox,title=Reviewer \#3 -- Comment 2] The paper identifies two components of Factory-related
@@ -477,27 +500,57 @@
 		significant shortcoming is the lack of clear articulation regarding how these two types
 		differ from conventional EOA-deployed contracts. The paper fails to explicitly outline the distinctive
 		characteristics of FSCs that might introduce novel security concerns, which undermines a
-		crucial aspect of the paper's motivation. Furthermore, when discussing security issues, the authors
-		do not adequately differentiate between risks specific to factory contracts versus those affecting
-		factory-deployed contracts. It remains unclear whether security vulnerabilities manifest
+		crucial aspect of the paper's motivation.
+	\end{tcolorbox}
+
+	\noindent
+	\textbf{Response.}
+
+	\textit{Acknowledgement.} We agree the previous version did not clearly articulate how factory contracts
+	and factory-deployed contracts differ from EOA-deployed contracts or why those differences matter
+	for security.
+
+	\textit{Revision and current status.} Background adds a dedicated \emph{Factory vs. EOA deployment}
+	subsection with a side-by-side diagram and plain-language definitions. We explain: (i) the two-step
+	factory deployment process; (ii) msg.sender semantics during constructors; and (iii) address derivation
+	under CREATE/CREATE2 that enables deterministic deployment and provenance checks. We also
+	describe how factories centralize governance and initialization flows relative to direct EOA
+	deployment.
+
+	\textit{Position in revised manuscript.} {\color{red}\textbf{Background (Section 2)}}
+
+	\textit{Main change.} {\color{blue}\textbf{EOA vs. factory exposition + deployment figure; distinctive characteristics clarified}}
+
+	\begin{tcolorbox}
+		[commentbox,title=Reviewer \#3 -- Comment 3] When discussing security issues, the authors do
+		not adequately differentiate between risks specific to factory contracts versus those
+		affecting factory-deployed contracts. It remains unclear whether security vulnerabilities manifest
 		similarly or differently across these two contract types.
 	\end{tcolorbox}
 
 	\noindent
 	\textbf{Response.}
 
-	\textit{Acknowledgement.} We agree the previous version did not sufficiently make these distinctions
-	explicit.
+	\textit{Acknowledgement.} We appreciate the request for clearer structure. In the revised manuscript,
+	we do not separate by “factory contracts” versus “factory-deployed contracts.” Instead, we organize
+	the security discussion along two layers that better reflect factory semantics: \textit{Attack
+	Vectors} (abuse patterns enabled by factory mechanisms, e.g., CREATE2 provenance/determinism)
+	and \textit{Security Issues} (implementation risks that arise under the factory pattern).
 
-	\textit{Revision and current status.} Background now provides an explicit EOA vs. factory comparison
-	with a deployment figure, and security sections indicate which issues impact factory-deployed vs
-	factory contracts; RQ5 headings/captions reflect these distinctions. \textit{Position in revised
-	manuscript.} {\color{red}\textbf{Background (Section 2); RQ5 (Section 3.10)}}
+	\textit{Revision and current status.} RQ5 is restructured around this two-layer taxonomy. We summarize
+	the mapping in Table~\ref{tab:attack-vector-security-issue} (placed at page top): Attack Vectors
+	include Mutable Code and \textbf{Address Spoofing} (new in the revised version); Security Issues
+	include Unhandled Low-Level Contract Creation, Unexpected Ownership Transfer, and Unverified
+	Master Contract. Each item provides concrete conditions, real cases, and targeted mitigations.
 
-	\textit{Main change.} {\color{blue}\textbf{Clear separation of targets}}
+	\input{table/attack-vector-security-issue}
+
+	\textit{Position in revised manuscript.} {\color{red}\textbf{RQ5 (Section 3.10)}}
+
+	\textit{Main change.} {\color{blue}\textbf{Two-layer framing (attack vectors vs. security issues); Address Spoofing added}}
 
 	\begin{tcolorbox}
-		[commentbox,title=Reviewer \#3 -- Comment 3] From a technical perspective, the paper
+		[commentbox,title=Reviewer \#3 -- Comment 4] From a technical perspective, the paper
 		exhibits notable weaknesses. The factory detector primarily relies on Slither's analysis results
 		without demonstrating significant innovation in detection methodology. Moreover, the method employed
 		for unverified contracts—using transaction patterns for detection—is prone to substantial false
@@ -512,12 +565,35 @@
 	patterns and risked false negatives.
 
 	\textit{Revision and current status.} We design and implement a bytecode-based Factory Contract Detector
-	independent of source code, and validate it on a curated ground truth with precision/recall and
-	timing metrics (RQ1). We analyze the principal limitation (proxy-mediated factories) and scope it
-	in Threats to Validity.
+	independent of source code and validate it on a curated ground truth with full metrics: \textbf{0.17\%}
+	false-positive rate and \textbf{8.39\%} false-negative rate, with median detection time \textbf{4.7
+	ms} and \textbf{75\%} of contracts analyzed within \textbf{24.2 ms}. Figure~\ref{fig:detector_latency_cdf}
+	shows the CDF of per-contract execution time. Remaining false negatives are concentrated in
+	\emph{proxy-mediated factories}: deployments performed via \texttt{DELEGATECALL}/\texttt{CALL}
+	to external deployers (e.g., linked libraries, registries, or singleton deployers) where the
+	\texttt{CREATE}/\texttt{CREATE2} opcode resides in the \emph{callee}'s bytecode rather than in the
+	factory's own runtime. Our detector is a static, intra-bytecode analysis; it does not
+	dynamically resolve on-chain implementation addresses or chase indirect call targets via storage/computed
+	addresses. As a result, factories that mint exclusively through external deployers without
+	inlined \texttt{CREATE}/\texttt{CREATE2} appear negative under our criteria. We scope this limitation
+	in Threats to Validity and discuss inter-contract analysis as future work. We also provide
+	detector pseudocode and implementation details.
+
+	\begin{figure}[t]
+		\centering
+		\includegraphics[width=0.52\linewidth]{figure/execution_time_cdf.pdf}
+		\caption{CDF of detector execution time per contract.}
+		\label{fig:detector_latency_cdf}
+	\end{figure}
+
+	\textit{Position in revised manuscript.}
+	{\color{red}\textbf{RQ1 (Section 3.6); Threats to Validity (Section 4.2)}}
+
+	\textit{Main change.}
+	{\color{blue}\textbf{Slither/tx heuristics replaced with validated bytecode detector + metrics}}
 
 	\begin{tcolorbox}
-		[commentbox,title=Reviewer \#3 -- Comment 4] The paper claims to have detected "1,180 newly
+		[commentbox,title=Reviewer \#3 -- Comment 5] The paper claims to have detected "1,180 newly
 		discovered security issues" using security checkers, but it fails to provide clear technical
 		details about the design and implementation of these checkers. Furthermore, there is
 		insufficient discussion of the validation methodology for these security checkers (e.g., precision/recall,
@@ -530,17 +606,18 @@
 	\textit{Acknowledgement.} We agree the previous version lacked sufficient technical and validation
 	details for the “1,180 issues” claim.
 
-	\textit{Revision and current status.} We no longer claim a fixed issue count. Instead, we
-	provide an attack-vector–driven analysis with real-world cases and mitigations (RQ5), while rigorously
-	validating the foundational factory detector (RQ1).
+	\textit{Revision and current status.} We no longer claim a fixed issue count. Instead, RQ5 is
+	organized around attack vectors and security issues (Table~\ref{tab:attack-vector-security-issue}).
+	For \emph{each} attack vector and \emph{each} security issue, we provide a concrete real-world
+	case and actionable mitigations. In parallel, we rigorously validate the foundational factory
+	detector (RQ1).
 
-	\textit{Position in revised manuscript.}
-	{\color{red}\textbf{RQ5 (Section 3.10); RQ1 (Section 3.6)}}
+	\textit{Position in revised manuscript.} {\color{red}\textbf{RQ5 (Section 3.10); RQ1 (Section 3.6)}}
 
 	\textit{Main change.} {\color{blue}\textbf{Vector-driven security; validated detector}}
 
 	\begin{tcolorbox}
-		[commentbox,title=Reviewer \#3 -- Comment 5] The study focuses exclusively on the Ethereum mainnet,
+		[commentbox,title=Reviewer \#3 -- Comment 6] The study focuses exclusively on the Ethereum mainnet,
 		which the authors acknowledge as a limitation. While Ethereum is the most prominent smart contract
 		platform, the findings may not generalize to other EVM-compatible blockchains like Polygon, Arbitrum,
 		or Optimism. This limits the broader applicability of the research findings.
@@ -551,15 +628,20 @@
 
 	\textit{Acknowledgement.} We agree the previous version lacked a broader EVM perspective.
 
-	\textit{Revision and current status.} We extend to Polygon and discuss external validity and
-	future extensions.
+	\textit{Revision and current status.} We extend measurements to Polygon and report multi chain results
+	in RQ2: we surface \textbf{120{,}204} Ethereum factories and \textbf{69{,}258} Polygon factories;
+	daily activity is steady with substantial throughput (ETH median \textbf{160} factories and \textbf{10{,}662}
+	creates/day; POLY \textbf{127} and \textbf{2{,}674}). We discuss external validity/generalizability
+	and outline extensions to additional EVM chains.
 
-	\textit{Position in revised manuscript.} {\color{red}\textbf{RQ2 (Section 3.7); Threats to Validity (Section 4.2)}}
+	\textit{Position in revised manuscript.}
+	{\color{red}\textbf{RQ2 (Section 3.7); Threats to Validity (Section 4.2)}}
 
-	\textit{Main change.} {\color{blue}\textbf{Multi-chain study; external validity}}
+	\textit{Main change.}
+	{\color{blue}\textbf{Multi-chain (Ethereum+Polygon) measurements with quantified throughput; external validity discussed}}
 
 	\begin{tcolorbox}
-		[commentbox,title=Reviewer \#3 -- Comment 6] While the paper identifies security issues in FSCs,
+		[commentbox,title=Reviewer \#3 -- Comment 7] While the paper identifies security issues in FSCs,
 		it does not quantify their economic impact. Also, apart from the Tornado Cash DAO attack
 		case study, the paper provides limited analysis of real-world exploits targeting FSC vulnerabilities.
 	\end{tcolorbox}
@@ -570,11 +652,12 @@
 	\textit{Acknowledgement.} We agree the previous version did not quantify economic impact and had
 	limited real-world exploit analyses.
 
-	\textit{Revision and current status.} We add case-grounded analyses on Address Spoofing,
-	Unhandled Low-Level Creation, Unexpected Ownership Transfer, and Unverified Master Contract with
-	practical consequences and mitigations (RQ5). Where precise loss amounts require on-chain forensics,
-	we scope this as future work and provide operational guidance now. \textit{Position in revised
-	manuscript.} {\color{red}\textbf{RQ5 (Section 3.10)}}
+	\textit{Revision and current status.} We add case-grounded analyses on Address Spoofing, Unhandled
+	Low-Level Creation, Unexpected Ownership Transfer, and Unverified Master Contract with practical
+	consequences and mitigations (RQ5). Where precise loss amounts require on-chain forensics, we scope
+	this as future work and provide operational guidance now.
+
+	\textit{Position in revised manuscript.} {\color{red}\textbf{RQ5 (Section 3.10)}}
 
 	\textit{Main change.} {\color{blue}\textbf{Cases with mitigations; quantification planned}}
 
@@ -599,9 +682,12 @@
 	\textit{Revision and current status.} We document predefined auditing guidelines, independent
 	reviews, three-round voting and conflict resolution, and release public artifacts. Due to space and
 	anonymization constraints, we summarize the process rather than full biographies; the artifact includes
-	de-identified expertise profiles and time accounting. \textit{Position in revised manuscript.} {\color{red}\textbf{Threats to Validity (Section 4.2)}}
+	de-identified expertise profiles and time accounting.
 
-	\textit{Main change.} {\color{blue}\textbf{Guidelines + 3-round expert reviews; artifacts released}}
+	\textit{Position in revised manuscript.} {\color{red}\textbf{Threats to Validity (Section 4.2)}}
+
+	\textit{Main change.}
+	{\color{blue}\textbf{Guidelines + 3-round expert reviews; artifacts released}}
 
 	\begin{tcolorbox}
 		[commentbox,title=Reviewer \#4 -- Comment 2] One concern is that there is no standard (ground-truth)
@@ -613,13 +699,14 @@
 	\noindent
 	\textbf{Response.}
 
-	\textit{Acknowledgement.} We agree that the previous version lacked a ground truth and did not
-	fully validate reported issues.
+	\textit{Acknowledgement.} We agree that the previous version lacked a ground truth and did not fully
+	validate reported issues.
 
-	\textit{Revision and current status.} We introduce a curated ground truth for factory detection and
-	thoroughly evaluate it (precision/recall/timing; FN/FP analyses). For security issues, we pivot
-	from mass counting to case-backed analyses and mitigations, avoiding overclaims. \textit{Position
-	in revised manuscript.} {\color{red}\textbf{RQ1; RQ5}}
+	\textit{Revision and current status.} We introduce a curated ground truth for factory detection
+	and thoroughly evaluate it (precision/recall/timing; FN/FP analyses). For security issues, we pivot
+	from mass counting to case-backed analyses and mitigations, avoiding overclaims.
+
+	\textit{Position in revised manuscript.} {\color{red}\textbf{RQ1; RQ5}}
 
 	\textit{Main change.} {\color{blue}\textbf{Precision/recall/timing + FN/FP analyses; case-backed security}}
 
@@ -639,9 +726,11 @@
 	\textit{Revision and current status.} For each vector/issue we discuss practical impact and operational
 	risks with prioritized mitigations (e.g., return-value validation, deployment-chain attestation).
 	We plan to add broader economic quantification in future work as on-chain datasets mature.
+
 	\textit{Position in revised manuscript.} {\color{red}\textbf{RQ5 (Section 3.10)}}
 
-	\textit{Main change.} {\color{blue}\textbf{Return-value validation; deployment-chain attestation}}
+	\textit{Main change.}
+	{\color{blue}\textbf{Return-value validation; deployment-chain attestation}}
 
 	\begin{tcolorbox}
 		[commentbox,title=Reviewer \#4 -- Comment 4] While the empirical scale and focused analysis are
@@ -655,11 +744,22 @@
 	\noindent
 	\textbf{Response.}
 
-	\textit{Acknowledgement.} We acknowledge that several patterns and concerns are known.
+	\textit{Acknowledgement.} We acknowledge the earlier manuscript framed technical contributions too
+	loosely: it emphasized cataloging known patterns and source-level heuristics, provided limited validation,
+	and did not clearly separate mechanism-level attack vectors from implementation-level security
+	issues. This made the “technical contributions” appear narrow.
 
-	\textit{Revision and current status.} Our novelty lies in validated bytecode-level detection at ecosystem
-	scale, multi-chain measurements, and a structured, factory-aware security analysis with concrete
-	mitigations.
+	\textit{Revision and current status.} We strengthen the technical contributions: (i) a \emph{bytecode-level}
+	Factory Contract Detector with ground-truth evaluation (FPR \textbf{0.17\%}, FNR \textbf{8.39\%},
+	median \textbf{4.7 ms}); (ii) two factory-specific \emph{attack vectors} with real incidents and
+	mitigations (Mutable Code; Address Spoofing, new); (iii) three \emph{security issues} under the factory
+	pattern with cases and mitigations (Unhandled Low-Level Contract Creation; Unexpected Ownership Transfer;
+	Unverified Master Contract); (iv) \emph{multi-chain} measurement of factory prevalence/throughput;
+	and (v) a concise two-layer security framing (Attack Vectors vs. Security Issues; Table~\ref{tab:attack-vector-security-issue}).
+
+	\textit{Position in revised manuscript.} {\color{red}\textbf{RQ1 (Section 3.6); RQ2 (Section 3.7); RQ5 (Section 3.10); Table~\ref{tab:attack-vector-security-issue}}}
+
+	\textit{Main change.} {\color{blue}\textbf{Bytecode-level detector + metrics; two attack vectors (incl. Address Spoofing) with cases; three factory-pattern issues with mitigations; multi-chain measurement}}
 
 	\begin{tcolorbox}
 		[commentbox,title=Reviewer \#4 -- Comment 5] There are some typos the authors need to carefully
@@ -676,8 +776,9 @@
 
 	\textit{Revision and current status.} We add full pseudocode for the Factory Contract Detector (RQ1)
 	and clarify scope for other analyses with detailed procedures, examples, and figures. We
-	proofread and fix typos and cross-references. \textit{Position in revised manuscript.}
-	{\color{red}\textbf{RQ1 (Section 3.6)}}
+	proofread and fix typos and cross-references.
+
+	\textit{Position in revised manuscript.}{\color{red}\textbf{RQ1 (Section 3.6)}}
 
 	\textit{Main change.}
 	{\color{blue}\textbf{Algorithm pseudocode added; scope clarified; typos fixed}}

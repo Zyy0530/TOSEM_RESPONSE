@@ -342,8 +342,8 @@
 	this prominence, the research landscape remains fragmented. \textbf{(i) Missing ecosystem-scale
 	evidence on factory prevalence and domains.} Existing measurements concentrate on narrow
 	slices—e.g., contract clustering studies~\cite{DBLP:conf/sigsoft/SunXLLL23,DBLP:conf/fc/FrowisB22,DBLP:conf/fc/SalehiCM22}
-	or inline-assembly analyses~\cite{DBLP:journals/pacmpl/ChaliasosGL22}—and therefore miss cross-chain
-	deployment volume and sector diversity. \textbf{(ii) Missing comprehensive views of factory
+or inline-assembly analyses~\cite{DBLP:journals/pacmpl/ChaliasosGL22}—and therefore miss multi chain
+deployment volume and sector diversity. \textbf{(ii) Missing comprehensive views of factory
 	implementation patterns beyond proxies.} Prior work on proxy ecosystems~\cite{DBLP:conf/uss/BodellMD23,proxy-empirical-ecosystem}
 	and upgradeable design guidelines~\cite{eip-1014,eip-1167,eip-2470,eip-3171} explores individual
 	patterns but stops short of mapping the broader family of factory templates used in production.
@@ -1085,8 +1085,8 @@ contract SingletonFactory {
 }
 			\end{lstlisting}
 		\end{minipage}
-		\caption{Code snippet of Keyless Singleton pattern, enabling deterministic cross-chain deployment
-		using CREATE2 with predictable addresses.}
+\caption{Code snippet of Keyless Singleton pattern, enabling deterministic multi chain deployment
+using CREATE2 with predictable addresses.}
 		\label{list:singleton}
 	\end{figure}
 
@@ -1189,8 +1189,8 @@ contract tempFactory {
 		through comprehensive analysis of factory contract implementations: Template Configuration Pattern,
 		Proxy Delegation Pattern, Centralized Registry Pattern, Keyless Singleton Pattern, Salted Address
 		Pattern, and Metamorphic Factory Pattern. These patterns represent fundamental approaches to
-		contract deployment, gas optimization, management efficiency, cross-chain deployment, and contract
-		upgradeability.
+contract deployment, gas optimization, management efficiency, multi chain deployment, and contract
+upgradeability.
 	\end{answerbox}
 
 	\subsection{RQ5: Attack Vector and Security Issue Analysis}
